@@ -1,0 +1,11 @@
+ <h3>Welcome list of heroes</h3>
+<td>
+  <li *ngFor="let heroe of getHeroes">{{ heroe }}</li>
+</td>
+<p *ngIf="getHeroes.length>0 else removeTarget">Ultimo heroe borrado: {{
+  getRemoveHeroe() }}</p>
+<ng-template #removeTarget>
+  <h3>No hay nada que Borrar</h3>
+</ng-template>
+<button  *ngIf="getHeroes.length > 0" (click)="removeHeroe()">Borrar Heroe</button>
+
